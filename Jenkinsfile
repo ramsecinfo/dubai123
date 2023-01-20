@@ -25,7 +25,7 @@ stage ('Deploy-To-Tomcat') {
 
 
     }
-}
-}
   }
+ }
+}
 }
