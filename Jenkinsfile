@@ -19,7 +19,7 @@ pipeline {
 		sh 'docker pull gesellix/trufflehog'
 		sh 'docker run -t gesellix/trufflehog --json https://github.com/ramsecinfo/dubai123.git > trufflehog'
 		sh 'cat trufflehog'
-	    }
+	     }
 	    }
 	  
 	 stage ('Source-Composition-Analysis') {
@@ -29,10 +29,9 @@ pipeline {
 		     sh 'chmod +x owasp-dependency-check.sh'
 		     sh 'bash owasp-dependency-check.sh'
 		     sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
-		     
 		}
-	    }
-
+	     }
+	  
     stage ('Build') {
       steps {
       sh 'mvn clean package'
